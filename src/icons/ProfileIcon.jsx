@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function ProfileIcon({ size }) {
   return (
     <div style={{ cursor: "pointer" }}>

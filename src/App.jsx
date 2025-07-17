@@ -3,10 +3,10 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
 import SideBar from "./components/sidebar/SideBar";
 import WelcomeBar from "./components/WelcomeBar";
-import ViewQNA from "./components/ViewQNA";
-import DashBoard from "./components/DashBoard";
-import ReviewedQNA from "./components/ReviewedQNA";
-import Notification from "./components/Notification";
+import ViewQNA from "./components/sidebar-pages/ViewQNA";
+import DashBoard from "./components/sidebar-pages/DashBoard";
+import ReviewedQNA from "./components/sidebar-pages/ReviewedQNA";
+import Notification from "./components/sidebar-pages/Notification";
 
 function App() {
   return (
@@ -14,11 +14,11 @@ function App() {
       <NavigationBar />
       <WelcomeBar />
 
-      <div className="flex border-[1px]">
+      <div className="flex">
         <SideBar />
 
         <Routes>
-          <Route path="/" element={<Navigate to="viewqna" />} />
+          <Route path="/" element={<Navigate to="view_qna" />} />
 
           <Route path="/dashboard" element={<DashBoard />} />
           <Route path="/notification" element={<Notification />} />
