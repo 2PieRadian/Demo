@@ -3,7 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
 import SideBar from "./components/sidebar/SideBar";
 import WelcomeBar from "./components/WelcomeBar";
-import ViewQNA from "./components/sidebar-pages/ViewQNA";
+import ViewQNA from "./components/sidebar-pages/ViewQNA/ViewQNA";
 import DashBoard from "./components/sidebar-pages/DashBoard";
 import ReviewedQNA from "./components/sidebar-pages/ReviewedQNA";
 import Notification from "./components/sidebar-pages/Notification";
