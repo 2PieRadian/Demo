@@ -36,7 +36,7 @@ export default function SelectTopic({
         type="text"
         readOnly={true}
         value={selectedOption}
-        className="bg-[rgba(230,230,230,1)] w-full outline-none rounded-[5px] border-none text-[16px] font-light placeholder:text-gray-800 text-black py-[9px] px-[15px] cursor-pointer"
+        className="bg-[rgba(230,230,230,1)] outline-none rounded-[5px] border-none text-[16px] font-light placeholder:text-gray-800 text-black py-[9px] px-[15px] cursor-pointer"
       />
 
       <ChevronDown size={20} />

@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, LucideImageMinus } from "lucide-react";
 import Page from "./Page";
 
 export default function Pagination({
@@ -22,7 +22,11 @@ export default function Pagination({
     buttonEnd = totalPages;
   }
 
-  const limitedButtonsArray = paginationArray.slice(buttonStart, buttonEnd);
+  let limitedButtonsArray = paginationArray.slice(buttonStart, buttonEnd);
+
+  if (limitedButtonsArray[limitedButtonsArray.length - 1] < totalPages) {
+    limitedButtonsArray = [...limitedButtonsArray, "...", totalPages];
+  }
 
   function handleNextButton() {
     setCurrentPage((prev) => prev + 1);
@@ -37,7 +41,7 @@ export default function Pagination({
   }
 
   return (
-    <div className="flex justify-center items-center gap-[20px] ">
+    <div className="flex justify-center items-center gap-[20px] mt-[20px]">
       {currentPage > 1 && (
         <button
           className="flex items-center text-gray-400 transition duration-100 text-[18px] gap-[5px] cursor-pointer hover:text-black"
@@ -49,14 +53,18 @@ export default function Pagination({
       )}
 
       <div className="flex items-center gap-[5px]">
-        {limitedButtonsArray.map((page) => (
-          <Page
-            key={page}
-            page={page}
-            onClick={() => handlePageClick(page)}
-            currentPage={currentPage}
-          />
-        ))}
+        {limitedButtonsArray.map((page) =>
+          page === "..." ? (
+            <span className="mx-[5px]">...</span>
+          ) : (
+            <Page
+              key={page}
+              page={page}
+              onClick={() => handlePageClick(page)}
+              currentPage={currentPage}
+            />
+          )
+        )}
       </div>
 
       {currentPage < totalPages && (

@@ -7,15 +7,18 @@ import DashBoard from "./components/sidebar-pages/DashBoard";
 import ReviewedQNA from "./components/sidebar-pages/ReviewedQNA";
 import Notification from "./components/sidebar-pages/Notification";
 import NewQNA from "./components/sidebar-pages/NewQNA";
+import { useState } from "react";
 
 function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
   return (
     <div className="font-public-sans select-none">
       <NavigationBar />
       <WelcomeBar />
 
       <div className="flex">
-        <SideBar />
+        {isSidebarOpen && <SideBar />}
 
         <div className="p-[20px] w-full dark:bg-[#1d1d1d]">
           <Routes>
