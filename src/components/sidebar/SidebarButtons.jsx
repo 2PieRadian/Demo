@@ -10,7 +10,9 @@ function MyLink({ children, to }) {
       to={to}
       className={({ isActive }) =>
         `flex items-center justify-start gap-[20px] ml-[-3px] ${
-          isActive ? "text-black" : "text-gray-500"
+          isActive
+            ? "text-black dark:text-white"
+            : "text-gray-500 dark:text-gray-400"
         }`
       }
     >

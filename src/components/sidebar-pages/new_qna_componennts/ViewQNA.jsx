@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Line from "../../Line";
 import SearchBar from "./view_qna_components/SearchBar";
 import SelectTopic from "./view_qna_components/SelectTopic";
@@ -13,11 +13,41 @@ export default function ViewQNA() {
   const [draftOnly, setDraftOnly] = useState(false);
   const [currentTopic, setCurrentTopic] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const PAGE_SIZE = 5;
+  const PAGE_SIZE = 6;
   const totalQuestions = filteredQuestions.length;
   const start = (currentPage - 1) * PAGE_SIZE;
   let end = Math.min(start + PAGE_SIZE, filteredQuestions.length);
+
+  function fuzzySearch(substr, str) {
+    const words = substr.toLowerCase().split(" ");
+    str = str.toLowerCase();
+
+    for (const word of words) {
+      if (!str.includes(word)) return false;
+    }
+
+    return true;
+  }
+
+  useEffect(() => {
+    if (searchQuery === "") {
+      setFilteredQuestions(questions);
+      return;
+    }
+
+    setCurrentTopic("All");
+    setFilteredQuestions(
+      questions.filter((q) => fuzzySearch(searchQuery, q.content))
+    );
+
+    setCurrentPage(1);
+  }, [searchQuery]);
+
+  function filterBySearch(e) {
+    setSearchQuery(e.target.value);
+  }
 
   function filterByTopicName(topic_name) {
     const filteredByTopicName = questions.filter(
@@ -55,14 +85,17 @@ export default function ViewQNA() {
   }
 
   return (
-    <div className="w-full h-full flex flex-col gap-[20px] border border-gray-300 p-[30px] rounded-[10px]">
+    <div className="w-full dark:text-gray-300 dark:border-gray-700 h-full flex flex-col gap-[20px] border border-gray-300 p-[30px] rounded-[10px]">
       <h1 className="text-[20px]">View Q&A</h1>
 
       <Line />
 
       <div className="flex items-center gap-[7px] w-full">
-        <SearchBar />
-        <SelectTopic filterByTopicName={filterByTopicName} />
+        <SearchBar filterBySearch={filterBySearch} searchQuery={searchQuery} />
+        <SelectTopic
+          filterByTopicName={filterByTopicName}
+          currentTopic={currentTopic}
+        />
         <DraftOnly draftOnlyFilter={draftOnlyFilter} draftOnly={draftOnly} />
       </div>
 

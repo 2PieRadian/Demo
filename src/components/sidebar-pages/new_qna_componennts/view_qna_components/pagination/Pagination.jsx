@@ -61,7 +61,7 @@ export default function Pagination({
 
       {currentPage < totalPages && (
         <button
-          className="flex items-center text-gray-400 text-[18px] transition duration-100 gap-[5px] cursor-pointer hover:text-black"
+          className="flex items-center hover:dark:text-white dark:text-gray-400 text-gray-400 text-[18px] transition duration-100 gap-[5px] cursor-pointer hover:text-black"
           onClick={handleNextButton}
         >
           Next

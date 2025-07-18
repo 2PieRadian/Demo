@@ -6,4 +6,20 @@
   --font-public-sans: "Public Sans";
 }
 
-/* @custom-variant dark (&:where(.dark, .dark *)); */
+@custom-variant dark (&:where(.dark, .dark *));
+
+.info-tooltip {
+  z-index: 10;
+  background: white;
+}
+
+.info-tooltip::after {
+  content: "\25B2";
+  position: absolute;
+  top: -25.5px;
+  font-size: 25px;
+  right: 30px;
+  text-shadow: 0px -1px 1px rgb(190, 189, 189);
+  color: rgb(255, 255, 255);
+  z-index: 1;
+}

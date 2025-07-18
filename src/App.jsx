@@ -17,7 +17,7 @@ function App() {
       <div className="flex">
         <SideBar />
 
-        <div className="p-[20px] w-full">
+        <div className="p-[20px] w-full dark:bg-[#1d1d1d]">
           <Routes>
             <Route path="/" element={<Navigate to="new_qna" />} />
 

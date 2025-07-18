@@ -2,7 +2,7 @@ import { useState } from "react";
 import { options } from "../../../../constants/constants";
 import { ChevronDown } from "lucide-react";
 
-export default function SelectTopic({ filterByTopicName }) {
+export default function SelectTopic({ filterByTopicName, currentTopic }) {
   const [selectedOption, setSelectedOption] = useState("Select a Topic");
   const [isOpen, setIsOpen] = useState(false);
 
@@ -32,7 +32,7 @@ export default function SelectTopic({ filterByTopicName }) {
       <input
         type="text"
         readOnly={true}
-        value={selectedOption}
+        value={currentTopic}
         className="bg-[rgba(230,230,230,1)] w-full outline-none rounded-[5px] border-none text-[16px] font-light placeholder:text-gray-800 text-black py-[9px] px-[15px] cursor-pointer"
       />
 
