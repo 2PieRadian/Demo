@@ -5,12 +5,18 @@ import SelectTopic from "./view_qna_components/SelectTopic";
 import DraftOnly from "./view_qna_components/DraftOnly";
 import Questions from "./view_qna_components/Questions";
 import data from "../../../../dummy_data/data";
+import Pagination from "./view_qna_components/pagination/Pagination";
 
 export default function ViewQNA() {
   const [questions, setQuestions] = useState(data);
   const [filteredQuestions, setFilteredQuestions] = useState(questions);
   const [draftOnly, setDraftOnly] = useState(false);
   const [currentTopic, setCurrentTopic] = useState("All");
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const PAGE_SIZE = 5;
+  const totalQuestions = filteredQuestions.length;
+  const start = (currentPage - 1) * PAGE_SIZE;
 
   function filterByTopicName(topic_name) {
     const filteredByTopicName = questions.filter(
@@ -19,6 +25,7 @@ export default function ViewQNA() {
 
     setFilteredQuestions(filteredByTopicName);
     setCurrentTopic(topic_name);
+    setCurrentPage(1);
   }
 
   function draftOnlyFilter() {
@@ -42,6 +49,7 @@ export default function ViewQNA() {
       }
     }
 
+    setCurrentPage(1);
     setDraftOnly((prev) => !prev);
   }
 
@@ -59,7 +67,18 @@ export default function ViewQNA() {
 
       <Line />
 
-      <Questions filteredQuestions={filteredQuestions} />
+      <Questions
+        filteredQuestions={filteredQuestions}
+        PAGE_SIZE={PAGE_SIZE}
+        start={start}
+      />
+
+      <Pagination
+        totalQuestions={totalQuestions}
+        PAGE_SIZE={PAGE_SIZE}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </div>
   );
 }
