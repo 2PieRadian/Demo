@@ -11,3 +11,7 @@ export const options = [
   "Cybersecurity",
   "Web Development",
 ];
+
+export const status = ["Accepted", "Not Approved", "In Progress"];
+
+export const PAGE_SIZE = 6;

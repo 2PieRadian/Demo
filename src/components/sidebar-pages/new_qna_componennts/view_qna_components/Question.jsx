@@ -29,7 +29,7 @@ export default function Question({ question }) {
         </div>
 
         {/* No of Answers Submitted */}
-        <div className="flex dark:bg-gray-700 dark:text-gray-400 items-center relative justify-center gap-[5px] font-light bg-[rgba(230,230,230,1)] text-[14px] h-[24px] p-[5px] rounded-[5px]">
+        <div className="flex dark:bg-gray-700 w-[60px] dark:text-gray-400 items-center relative justify-center gap-[5px] font-light bg-[rgba(230,230,230,1)] text-[14px] h-[24px] p-[5px] rounded-[5px]">
           <div>{question.answers_submitted_by_user}/3</div>
           <Info
             size={15}

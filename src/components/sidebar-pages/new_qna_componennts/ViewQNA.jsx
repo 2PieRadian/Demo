@@ -6,16 +6,17 @@ import DraftOnly from "./view_qna_components/DraftOnly";
 import Questions from "./view_qna_components/Questions";
 import data from "../../../../dummy_data/data";
 import Pagination from "./view_qna_components/pagination/Pagination";
+import { options } from "../../../constants/constants";
+import { PAGE_SIZE } from "../../../constants/constants";
 
 export default function ViewQNA() {
   const [questions, setQuestions] = useState(data);
   const [filteredQuestions, setFilteredQuestions] = useState(questions);
   const [draftOnly, setDraftOnly] = useState(false);
-  const [currentTopic, setCurrentTopic] = useState("All");
+  const [selectedOption, setSelectedOption] = useState("Select a Topic");
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const PAGE_SIZE = 6;
   const totalQuestions = filteredQuestions.length;
   const start = (currentPage - 1) * PAGE_SIZE;
   let end = Math.min(start + PAGE_SIZE, filteredQuestions.length);
@@ -37,7 +38,7 @@ export default function ViewQNA() {
       return;
     }
 
-    setCurrentTopic("All");
+    setSelectedOption("All");
     setFilteredQuestions(
       questions.filter((q) => fuzzySearch(searchQuery, q.content))
     );
@@ -55,7 +56,7 @@ export default function ViewQNA() {
     );
 
     setFilteredQuestions(filteredByTopicName);
-    setCurrentTopic(topic_name);
+    setSelectedOption(topic_name);
     setCurrentPage(1);
   }
 
@@ -66,16 +67,16 @@ export default function ViewQNA() {
         questions.filter(
           (q) =>
             q.status === "Draft" &&
-            (q.topic_name === currentTopic || currentTopic === "All")
+            (q.topic_name === selectedOption || selectedOption === "All")
         )
       );
     } else {
       // Turn off the filter
-      if (currentTopic === "All") {
+      if (selectedOption === "All") {
         setFilteredQuestions(questions);
       } else {
         setFilteredQuestions(
-          questions.filter((q) => q.topic_name === currentTopic)
+          questions.filter((q) => q.topic_name === selectedOption)
         );
       }
     }
@@ -93,8 +94,10 @@ export default function ViewQNA() {
       <div className="flex items-center gap-[7px] w-full">
         <SearchBar filterBySearch={filterBySearch} searchQuery={searchQuery} />
         <SelectTopic
+          options={options}
           filterByTopicName={filterByTopicName}
-          currentTopic={currentTopic}
+          selectedOption={selectedOption}
+          setSelectedOption={setSelectedOption}
         />
         <DraftOnly draftOnlyFilter={draftOnlyFilter} draftOnly={draftOnly} />
       </div>
