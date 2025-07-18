@@ -38,6 +38,7 @@ export default function ViewQNA() {
       return;
     }
 
+    setDraftOnly(false);
     setSelectedOption("All");
     setFilteredQuestions(
       questions.filter((q) => fuzzySearch(searchQuery, q.content))
@@ -55,6 +56,7 @@ export default function ViewQNA() {
       (q) => q.topic_name === topic_name || topic_name === "All"
     );
 
+    setDraftOnly(false);
     setFilteredQuestions(filteredByTopicName);
     setSelectedOption(topic_name);
     setCurrentPage(1);
@@ -63,16 +65,10 @@ export default function ViewQNA() {
   function draftOnlyFilter() {
     if (draftOnly === false) {
       // Turn on the filter
-      setFilteredQuestions(
-        questions.filter(
-          (q) =>
-            q.status === "Draft" &&
-            (q.topic_name === selectedOption || selectedOption === "All")
-        )
-      );
+      setFilteredQuestions(questions.filter((q) => q.status === "Draft"));
     } else {
       // Turn off the filter
-      if (selectedOption === "All") {
+      if (selectedOption === "All" || selectedOption === "Select a Topic") {
         setFilteredQuestions(questions);
       } else {
         setFilteredQuestions(
