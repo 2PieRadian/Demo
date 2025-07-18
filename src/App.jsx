@@ -3,10 +3,10 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
 import SideBar from "./components/sidebar/SideBar";
 import WelcomeBar from "./components/WelcomeBar";
-import ViewQNA from "./components/sidebar-pages/ViewQNA/ViewQNA";
 import DashBoard from "./components/sidebar-pages/DashBoard";
 import ReviewedQNA from "./components/sidebar-pages/ReviewedQNA";
 import Notification from "./components/sidebar-pages/Notification";
+import NewQNA from "./components/sidebar-pages/NewQNA";
 
 function App() {
   return (
@@ -17,14 +17,16 @@ function App() {
       <div className="flex">
         <SideBar />
 
-        <Routes>
-          <Route path="/" element={<Navigate to="view_qna" />} />
+        <div className="p-[20px] w-full">
+          <Routes>
+            <Route path="/" element={<Navigate to="new_qna" />} />
 
-          <Route path="/dashboard" element={<DashBoard />} />
-          <Route path="/notification" element={<Notification />} />
-          <Route path="/view_qna" element={<ViewQNA />} />
-          <Route path="/reviewed_qna" element={<ReviewedQNA />} />
-        </Routes>
+            <Route path="/dashboard" element={<DashBoard />} />
+            <Route path="/notification" element={<Notification />} />
+            <Route path="/new_qna" element={<NewQNA />} />
+            <Route path="/reviewed_qna" element={<ReviewedQNA />} />
+          </Routes>
+        </div>
       </div>
     </div>
   );

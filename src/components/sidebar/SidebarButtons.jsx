@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import DashBoardIcon from "../../icons/sidebar-icons/DashBoardIcon";
 import SidebarNotificationIcon from "../../icons/sidebar-icons/SidebarNotificationIcon";
 import PageIcon from "../../icons/sidebar-icons/PageIcon";
+import Line from "../Line";
 
 function MyLink({ children, to }) {
   return (
@@ -21,8 +22,7 @@ function MyLink({ children, to }) {
 export default function SidebarButtons() {
   return (
     <>
-      {/* Line */}
-      <div className="h-[1px] bg-[#bebebe]"></div>
+      <Line />
 
       <p className="text-[14px]">Management</p>
       <MyLink to="dashboard">
@@ -35,13 +35,12 @@ export default function SidebarButtons() {
         <p>Notification</p>
       </MyLink>
 
-      {/* Line */}
-      <div className="h-[1px] bg-gray-300"></div>
+      <Line />
 
       <p className="text-[14px]">Review Answers</p>
-      <MyLink to="view_qna">
+      <MyLink to="new_qna">
         <PageIcon size={28} />
-        <p>View Q&A</p>
+        <p>New Q&A</p>
       </MyLink>
 
       <MyLink to="reviewed_qna">
