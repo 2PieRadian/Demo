@@ -17,6 +17,7 @@ export default function ViewQNA() {
   const PAGE_SIZE = 5;
   const totalQuestions = filteredQuestions.length;
   const start = (currentPage - 1) * PAGE_SIZE;
+  let end = Math.min(start + PAGE_SIZE, filteredQuestions.length);
 
   function filterByTopicName(topic_name) {
     const filteredByTopicName = questions.filter(
@@ -71,11 +72,14 @@ export default function ViewQNA() {
         filteredQuestions={filteredQuestions}
         PAGE_SIZE={PAGE_SIZE}
         start={start}
+        end={end}
       />
 
       <Pagination
         totalQuestions={totalQuestions}
         PAGE_SIZE={PAGE_SIZE}
+        start={start}
+        end={end}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />

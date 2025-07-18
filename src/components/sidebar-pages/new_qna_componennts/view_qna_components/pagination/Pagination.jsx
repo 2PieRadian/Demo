@@ -11,6 +11,19 @@ export default function Pagination({
 
   const paginationArray = Array.from({ length: totalPages }, (_, i) => i + 1);
 
+  let buttonStart = currentPage - 3;
+  let buttonEnd = currentPage + 2;
+
+  if (buttonStart < 1) {
+    buttonStart = 0;
+  }
+
+  if (buttonEnd > totalPages) {
+    buttonEnd = totalPages;
+  }
+
+  const limitedButtonsArray = paginationArray.slice(buttonStart, buttonEnd);
+
   function handleNextButton() {
     setCurrentPage((prev) => prev + 1);
   }
@@ -24,10 +37,10 @@ export default function Pagination({
   }
 
   return (
-    <div className="flex justify-center items-center gap-[20px]">
+    <div className="flex justify-center items-center gap-[20px] ">
       {currentPage > 1 && (
         <button
-          className="flex items-center text-gray-400 text-[18px] gap-[5px] cursor-pointer"
+          className="flex items-center text-gray-400 transition duration-100 text-[18px] gap-[5px] cursor-pointer hover:text-black"
           onClick={handlePreviousButton}
         >
           <ArrowLeft size={22} />
@@ -36,7 +49,7 @@ export default function Pagination({
       )}
 
       <div className="flex items-center gap-[5px]">
-        {paginationArray.map((page) => (
+        {limitedButtonsArray.map((page) => (
           <Page
             key={page}
             page={page}
@@ -48,7 +61,7 @@ export default function Pagination({
 
       {currentPage < totalPages && (
         <button
-          className="flex items-center text-gray-400 text-[18px] gap-[5px] cursor-pointer"
+          className="flex items-center text-gray-400 text-[18px] transition duration-100 gap-[5px] cursor-pointer hover:text-black"
           onClick={handleNextButton}
         >
           Next

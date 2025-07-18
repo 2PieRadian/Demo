@@ -10,7 +10,7 @@ import NewQNA from "./components/sidebar-pages/NewQNA";
 
 function App() {
   return (
-    <div className="font-public-sans">
+    <div className="font-public-sans select-none">
       <NavigationBar />
       <WelcomeBar />
 
