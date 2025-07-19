@@ -12,7 +12,7 @@ export default function SearchBar({ filterBySearch, searchQuery }) {
         value={searchQuery}
       />
 
-      <Search size={19} />
+      <Search size={19} className="dark:text-black" />
     </div>
   );
 }

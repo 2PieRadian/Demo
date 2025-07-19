@@ -39,7 +39,7 @@ export default function SelectTopic({
         className="bg-[rgba(230,230,230,1)] outline-none rounded-[5px] border-none text-[16px] font-light placeholder:text-gray-800 text-black py-[9px] px-[15px] cursor-pointer"
       />
 
-      <ChevronDown size={20} />
+      <ChevronDown size={20} className="dark:text-black" />
 
       {isOpen && (
         <div className="flex flex-col shadow-[0px_0px_3px_1px_rgba(0,_0,_0,_0.1)] text-gray-500 absolute top-[50px] font-light rounded-[6px] z-10 bg-white  p-[5px]">

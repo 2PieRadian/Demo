@@ -11,7 +11,7 @@ function MyLink({ children, to }) {
       className={({ isActive }) =>
         `flex items-center justify-start gap-[20px] ml-[-3px] ${
           isActive
-            ? "text-black dark:text-white"
+            ? "bg-gray-100 text-black dark:text-white"
             : "text-gray-500 dark:text-gray-400"
         }`
       }
