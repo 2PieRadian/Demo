@@ -117,7 +117,7 @@ export default [
     answers_submitted_by_user: 3,
     status: "Draft",
     approved: "In Progress",
-    reviewed: false,
+    reviewed: true,
     stars: 0.0,
   },
   {
@@ -260,7 +260,7 @@ export default [
     answers_submitted_by_user: 2,
     status: "Draft",
     approved: "In Progress",
-    reviewed: false,
+    reviewed: true,
     stars: 0.0,
   },
   {
@@ -281,7 +281,7 @@ export default [
     topic_name: "Operating Systems",
     answers_submitted_by_user: 2,
     status: "Review & Comment",
-    approved: "Not Approved",
+    approved: "In Progress",
     reviewed: true,
     stars: 0.0,
   },
@@ -315,7 +315,7 @@ export default [
     answers_submitted_by_user: 3,
     status: "Review & Comment",
     approved: "In Progress",
-    reviewed: false,
+    reviewed: true,
     stars: 0.0,
   },
   {
@@ -425,7 +425,7 @@ export default [
     answers_submitted_by_user: 1,
     status: "Review & Comment",
     approved: "In Progress",
-    reviewed: false,
+    reviewed: true,
     stars: 0.0,
   },
   {
@@ -447,7 +447,7 @@ export default [
     answers_submitted_by_user: 1,
     status: "Draft",
     approved: "In Progress",
-    reviewed: false,
+    reviewed: true,
     stars: 0.0,
   },
   {
@@ -535,7 +535,7 @@ export default [
     answers_submitted_by_user: 2,
     status: "Review & Comment",
     approved: "In Progress",
-    reviewed: false,
+    reviewed: true,
     stars: 0.0,
   },
   {
@@ -579,7 +579,7 @@ export default [
     answers_submitted_by_user: 1,
     status: "Review & Comment",
     approved: "In Progress",
-    reviewed: false,
+    reviewed: true,
     stars: 0.0,
   },
   {
@@ -656,7 +656,7 @@ export default [
     answers_submitted_by_user: 3,
     status: "Review & Comment",
     approved: "In Progress",
-    reviewed: false,
+    reviewed: true,
     stars: 0.0,
   },
   {
@@ -733,7 +733,7 @@ export default [
     answers_submitted_by_user: 2,
     status: "Draft",
     approved: "In Progress",
-    reviewed: false,
+    reviewed: true,
     stars: 0.0,
   },
   {
@@ -777,7 +777,7 @@ export default [
     answers_submitted_by_user: 2,
     status: "Draft",
     approved: "In Progress",
-    reviewed: false,
+    reviewed: true,
     stars: 0.0,
   },
   {
@@ -876,7 +876,7 @@ export default [
     answers_submitted_by_user: 3,
     status: "Review & Comment",
     approved: "In Progress",
-    reviewed: false,
+    reviewed: true,
     stars: 0.0,
   },
   {
@@ -1041,7 +1041,7 @@ export default [
     answers_submitted_by_user: 3,
     status: "Draft",
     approved: "In Progress",
-    reviewed: false,
+    reviewed: true,
     stars: 0.0,
   },
   {
@@ -1063,7 +1063,7 @@ export default [
     answers_submitted_by_user: 2,
     status: "Draft",
     approved: "In Progress",
-    reviewed: false,
+    reviewed: true,
     stars: 0.0,
   },
   {

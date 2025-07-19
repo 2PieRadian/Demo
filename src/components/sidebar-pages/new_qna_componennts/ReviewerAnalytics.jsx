@@ -1,13 +1,25 @@
 import Line from "../../Line";
 import data from "../../../../dummy_data/data";
 
-export default function ReviewerAnalytics() {
-  const totalQuestions = data.length;
-  const totalAccepted = data.filter((q) => q.approved === "Accepted").length;
-  const totalRejected = data.filter(
+export default function ReviewerAnalytics({ showReviewed }) {
+  let totalQuestions;
+  let questions = [];
+
+  if (showReviewed) {
+    questions = data.filter((q) => q.reviewed);
+    totalQuestions = questions.length;
+  } else {
+    questions = data;
+    totalQuestions = questions.length;
+  }
+
+  const totalAccepted = questions.filter(
+    (q) => q.approved === "Accepted"
+  ).length;
+  const totalRejected = questions.filter(
     (q) => q.approved === "Not Approved"
   ).length;
-  const totalInPending = data.filter(
+  const totalInPending = questions.filter(
     (q) => q.approved === "In Progress"
   ).length;
 

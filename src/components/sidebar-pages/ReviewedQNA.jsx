@@ -5,7 +5,7 @@ export default function ReviewedQNA() {
   return (
     <div className="flex gap-[20px] justify-between">
       <ReviewedQNALeft />
-      <ReviewerAnalytics />
+      <ReviewerAnalytics showReviewed={true} />
     </div>
   );
 }
