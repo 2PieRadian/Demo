@@ -11,6 +11,7 @@ import { useState } from "react";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [role, setRole] = useState("Reviewer");
 
   return (
     <div className="font-public-sans select-none">
@@ -20,7 +21,7 @@ function App() {
       <div className="flex">
         {isSidebarOpen && <SideBar />}
 
-        <div className="p-[20px] w-full dark:bg-[#1d1d1d]">
+        <div className="p-[20px] w-full dark:bg-black">
           <Routes>
             <Route path="/" element={<Navigate to="new_qna" />} />
 

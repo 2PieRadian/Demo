@@ -44,7 +44,7 @@ export default function Pagination({
     <div className="flex justify-center items-center gap-[20px] mt-[20px]">
       {currentPage > 1 && (
         <button
-          className="flex items-center text-gray-400 transition duration-100 text-[18px] gap-[5px] cursor-pointer hover:text-black"
+          className="flex items-center dark:hover:text-white dark:text-dark-text-muted text-white transition duration-100 text-[18px] gap-[5px] cursor-pointer hover:text-black"
           onClick={handlePreviousButton}
         >
           <ArrowLeft size={22} />
@@ -69,7 +69,7 @@ export default function Pagination({
 
       {currentPage < totalPages && (
         <button
-          className="flex items-center hover:dark:text-white dark:text-gray-400 text-gray-400 text-[18px] transition duration-100 gap-[5px] cursor-pointer hover:text-black"
+          className="flex items-center dark:hover:text-white dark:text-dark-text-muted text-gray-400 text-[18px] transition duration-100 gap-[5px] cursor-pointer hover:text-black"
           onClick={handleNextButton}
         >
           Next

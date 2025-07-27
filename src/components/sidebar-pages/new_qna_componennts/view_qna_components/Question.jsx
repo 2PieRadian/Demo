@@ -14,7 +14,7 @@ export default function Question({ question }) {
   }
 
   return (
-    <div className="flex justify-between items-start">
+    <div className="flex justify-between items-start dark:text-white">
       {/* Left */}
       <div className="flex gap-[10px]">
         {/* Question Number */}

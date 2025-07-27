@@ -41,8 +41,8 @@ export default function ReviewedQNALeft() {
   }
 
   return (
-    <div className="w-full dark:text-gray-300 dark:border-gray-700 h-full flex flex-col gap-[20px] border border-gray-300 p-[30px] rounded-[10px]">
-      <h1 className="text-[20px]">Reviewed Q&A</h1>
+    <div className="border-[1px] border-light-border dark:border-dark-border dark:bg-dark-card w-full dark:text-dark-text-muted h-full flex flex-col gap-[20px] p-[30px] rounded-[10px]">
+      <h1 className="text-[20px] dark:text-white">Reviewed Q&A</h1>
 
       <Line />
 

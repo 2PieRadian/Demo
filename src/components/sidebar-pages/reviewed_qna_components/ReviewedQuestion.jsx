@@ -3,6 +3,8 @@ function Tag({ color, text }) {
 }
 
 export default function Question({ question }) {
+  const dark_bg_button = "#212121";
+
   let color;
 
   if (question.approved === "In Progress") {
@@ -14,7 +16,7 @@ export default function Question({ question }) {
   }
 
   return (
-    <div className="flex justify-between items-start">
+    <div className="flex justify-between items-start dark:text-white">
       {/* Left */}
       <div className="flex gap-[10px]">
         {/* Question Number */}
@@ -26,7 +28,7 @@ export default function Question({ question }) {
         {/* Status*/}
         <div className="flex flex-col items-center gap-[3px] font-bold">
           <div
-            className={`flex items-center w-[100px] dark:bg-gray-700 dark:text-gray-400 justify-center ${color} text-[13px] h-[24px] p-[5px] rounded-[5px]`}
+            className={`flex items-center w-[100px] justify-center ${color} text-[13px] h-[24px] p-[5px] rounded-[5px]`}
           >
             {question.approved}
           </div>
@@ -41,7 +43,9 @@ export default function Question({ question }) {
         </div>
 
         {/* Status */}
-        <button className="flex justify-center dark:text-black cursor-pointer items-center bg-[rgba(230,230,230,1)] text-[15px] w-[155px] h-[35px] rounded-[5px] ml-[20px]">
+        <button
+          className={`flex justify-center hover:border-[1px] dark:hover:border-[1px] dark:hover:border-dark-border dark:hover:bg-dark-hover dark:bg-dark-highlight dark:text-white cursor-pointer items-center bg-[rgba(230,230,230,1)] text-[15px] w-[155px] h-[35px] rounded-[5px] ml-[20px]`}
+        >
           View Comment
         </button>
       </div>
