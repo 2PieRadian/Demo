@@ -24,12 +24,12 @@ export default function Question({ question }) {
         <div className="flex-1">{question.content}</div>
 
         {/* Topic Name */}
-        <div className="flex items-center dark:bg-gray-700 dark:text-gray-400 justify-center font-light bg-[rgba(230,230,230,1)] text-[12px] h-[24px] p-[5px] rounded-[5px]">
+        <div className="flex items-center dark:bg-dark-more-highlighted dark:text-dark-text-muted justify-center font-light bg-[rgba(230,230,230,1)] text-[12px] h-[24px] p-[5px] rounded-[5px]">
           {question.topic_name}
         </div>
 
         {/* No of Answers Submitted */}
-        <div className="flex dark:bg-gray-700 w-[60px] dark:text-gray-400 items-center relative justify-center gap-[5px] font-light bg-[rgba(230,230,230,1)] text-[14px] h-[24px] p-[5px] rounded-[5px]">
+        <div className="flex w-[60px] dark:bg-dark-more-highlighted dark:text-dark-text-muted items-center relative justify-center gap-[5px] font-light bg-[rgba(230,230,230,1)] text-[14px] h-[24px] p-[5px] rounded-[5px]">
           <div>{question.answers_submitted_by_user}/3</div>
           <Info
             size={15}
@@ -41,7 +41,7 @@ export default function Question({ question }) {
         </div>
 
         {/* Status */}
-        <button className="flex justify-center dark:text-black cursor-pointer items-center bg-[rgba(230,230,230,1)] text-[15px] w-[155px] h-[35px] rounded-[5px] ml-[20px]">
+        <button className="flex justify-center transition-colors dark:border-[1px] dark:border-dark-border dark:hover:bg-dark-hover dark:bg-dark-highlight dark:text-white cursor-pointer items-center bg-[rgba(230,230,230,1)] text-[15px] w-[170px] h-[35px] rounded-[5px] ml-[20px]">
           {question.status}
         </button>
       </div>

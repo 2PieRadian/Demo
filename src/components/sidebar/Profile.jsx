@@ -3,7 +3,7 @@ export default function Profile() {
     <div className="flex flex-col items-center justify-center gap-[18px]">
       <img
         className="rounded-full w-[77px]"
-        src="../../../public/images/pfp.jpg"
+        src="../../../images/pfp.jpg"
         alt="Profile Photo"
       />
 

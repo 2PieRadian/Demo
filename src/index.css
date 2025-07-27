@@ -9,6 +9,7 @@
   /* Dark Mode */
   --color-dark-card: hsl(0, 0%, 5%); 
   --color-dark-highlight: hsl(0, 0%, 10%);
+  --color-dark-more-highlighted: hsl(0, 0%, 17%);
   --color-dark-hover: hsl(0, 0%, 15%);
   --color-dark-text-muted: hsl(0, 0%, 70%);
   --color-dark-border: hsl(0, 0%, 20%);
