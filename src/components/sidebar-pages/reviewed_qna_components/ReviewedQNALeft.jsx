@@ -5,7 +5,7 @@ import { options as topic_options, status } from "../../../constants/constants";
 import SearchBar from "../new_qna_componennts/view_qna_components/SearchBar";
 import SelectTopic from "../new_qna_componennts/view_qna_components/SelectTopic";
 import ReviewedQNAQuestions from "../reviewed_qna_components/ReviewedQNAQuestions";
-import Pagination from "../new_qna_componennts/view_qna_components/pagination/Pagination";
+import Pagination from "../../pagination/Pagination";
 import data from "../../../../dummy_data/data";
 import { PAGE_SIZE } from "../../../constants/constants";
 

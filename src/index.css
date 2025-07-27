@@ -3,7 +3,6 @@
 @import "tailwindcss";
 
 @theme {
-  --font-public-sans: "Public Sans";
   --color-white: hsl(0, 0%, 95%);
   
   /* Dark Mode */
@@ -15,11 +14,17 @@
   --color-dark-border: hsl(0, 0%, 20%);
   
   /* Light Mode */ 
+  --color-light-card: hsl(0, 0%, 90%);
+  --color-light-text: hsl(0, 0%, 30%);
   --color-light-border: hsl(0, 0%, 80%);
   --color-light-hover: hsl(0, 0%, 90%);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+* {
+  font-family: Public Sans;
+}
 
 .info-tooltip {
   z-index: 10;

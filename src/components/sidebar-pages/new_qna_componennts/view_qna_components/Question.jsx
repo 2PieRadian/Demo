@@ -1,6 +1,7 @@
 import { Info } from "lucide-react";
 import HoverInfo from "./HoverInfo";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Question({ question }) {
   const [openToolTip, setOpenToolTip] = useState(false);
@@ -41,9 +42,12 @@ export default function Question({ question }) {
         </div>
 
         {/* Status */}
-        <button className="flex justify-center transition-colors dark:border-[1px] dark:border-dark-border dark:hover:bg-dark-hover dark:bg-dark-highlight dark:text-white cursor-pointer items-center bg-[rgba(230,230,230,1)] text-[15px] w-[170px] h-[35px] rounded-[5px] ml-[20px]">
+        <Link
+          to={question.status === "Draft" ? `/qna/${question.id}` : ""}
+          className="flex justify-center transition-colors dark:border-[1px] dark:border-dark-border dark:hover:bg-dark-hover dark:bg-dark-highlight dark:text-white cursor-pointer items-center bg-[rgba(230,230,230,1)] text-[15px] w-[170px] h-[35px] rounded-[5px] ml-[20px]"
+        >
           {question.status}
-        </button>
+        </Link>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import SelectTopic from "./view_qna_components/SelectTopic";
 import DraftOnly from "./view_qna_components/DraftOnly";
 import Questions from "./view_qna_components/Questions";
 import data from "../../../../dummy_data/data";
-import Pagination from "./view_qna_components/pagination/Pagination";
+import Pagination from "../../pagination/Pagination";
 import { options } from "../../../constants/constants";
 import { PAGE_SIZE } from "../../../constants/constants";
 
