@@ -41,7 +41,7 @@ export default function Pagination({
   }
 
   return (
-    <div className="flex justify-center items-center gap-[20px] mt-[20px]">
+    <div className="flex justify-center items-center gap-[20px]">
       {currentPage > 1 && (
         <button
           className="flex items-center dark:hover:text-white text-gray-400 dark:text-dark-text-muted transition duration-100 text-[18px] gap-[5px] cursor-pointer hover:text-black"
@@ -55,7 +55,9 @@ export default function Pagination({
       <div className="flex items-center gap-[5px]">
         {limitedButtonsArray.map((page) =>
           page === "..." ? (
-            <span className="mx-[5px]">...</span>
+            <span key={page} className="mx-[5px]">
+              ...
+            </span>
           ) : (
             <Page
               key={page}

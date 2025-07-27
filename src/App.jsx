@@ -1,38 +1,27 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 
-import NavigationBar from "./components/NavigationBar";
-import SideBar from "./components/sidebar/SideBar";
-import WelcomeBar from "./components/WelcomeBar";
 import DashBoard from "./components/sidebar-pages/DashBoard";
 import ReviewedQNA from "./components/sidebar-pages/ReviewedQNA";
 import Notification from "./components/sidebar-pages/Notification";
 import NewQNA from "./components/sidebar-pages/NewQNA";
-import { useState } from "react";
+import HomeLayout from "./HomeLayout";
+import DraftPage from "./pages/draft_page/DraftPage";
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [role, setRole] = useState("Reviewer");
-
   return (
-    <div className="font-public-sans select-none">
-      <NavigationBar />
-      <WelcomeBar />
+    <Routes>
+      {/* Home */}
+      <Route path="/" element={<HomeLayout />}>
+        <Route index element={<Navigate to="dashboard" replace />} />
+        <Route path="dashboard" element={<DashBoard />} />
+        <Route path="notification" element={<Notification />} />
+        <Route path="new_qna" element={<NewQNA />} />
+        <Route path="reviewed_qna" element={<ReviewedQNA />} />
+      </Route>
 
-      <div className="flex">
-        {isSidebarOpen && <SideBar />}
-
-        <div className="p-[20px] w-full dark:bg-black">
-          <Routes>
-            <Route path="/" element={<Navigate to="new_qna" />} />
-
-            <Route path="/dashboard" element={<DashBoard />} />
-            <Route path="/notification" element={<Notification />} />
-            <Route path="/new_qna" element={<NewQNA />} />
-            <Route path="/reviewed_qna" element={<ReviewedQNA />} />
-          </Routes>
-        </div>
-      </div>
-    </div>
+      {/* Draft */}
+      <Route path="/qna/:id" element={<DraftPage />} />
+    </Routes>
   );
 }
 

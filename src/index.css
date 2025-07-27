@@ -3,7 +3,6 @@
 @import "tailwindcss";
 
 @theme {
-  --font-public-sans: "Public Sans";
   --color-white: hsl(0, 0%, 95%);
   
   /* Dark Mode */
@@ -22,6 +21,10 @@
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+* {
+  font-family: Public Sans;
+}
 
 .info-tooltip {
   z-index: 10;
