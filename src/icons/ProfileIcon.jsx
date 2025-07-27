@@ -32,7 +32,7 @@ export default function ProfileIcon({ size }) {
     >
       <img
         style={{ width: size * 2, borderRadius: "100%" }}
-        src="../../public/images/pfp.jpg"
+        src="images/pfp.jpg"
         alt="Hey"
       />
 

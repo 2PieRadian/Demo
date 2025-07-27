@@ -4,6 +4,18 @@
 
 @theme {
   --font-public-sans: "Public Sans";
+  --color-white: hsl(0, 0%, 95%);
+  
+  /* Dark Mode */
+  --color-dark-card: hsl(0, 0%, 5%); 
+  --color-dark-highlight: hsl(0, 0%, 10%);
+  --color-dark-hover: hsl(0, 0%, 15%);
+  --color-dark-text-muted: hsl(0, 0%, 70%);
+  --color-dark-border: hsl(0, 0%, 20%);
+  
+  /* Light Mode */ 
+  --color-light-border: hsl(0, 0%, 80%);
+  --color-light-hover: hsl(0, 0%, 90%);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));

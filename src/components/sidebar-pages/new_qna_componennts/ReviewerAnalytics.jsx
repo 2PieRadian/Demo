@@ -24,28 +24,28 @@ export default function ReviewerAnalytics({ showReviewed }) {
   ).length;
 
   return (
-    <div className="flex flex-col dark:text-white dark:border-gray-500 gap-[20px] w-[280px] p-[30px] border border-gray-300 rounded-[8px]">
+    <div className="dark:bg-dark-card flex flex-col dark:text-white border-[1px] border-light-border dark:border-dark-border gap-[20px] w-[280px] p-[30px] rounded-[8px]">
       <h1 className="text-[20px]">Reviewer Analytics</h1>
       <Line />
 
       <h2 className="text-[16px]">Total Reviewed</h2>
 
       <div>
-        <p className="text-[14px] dark:text-gray-300 text-gray-500 font-light">
+        <p className="text-[14px] dark:text-dark-text-muted text-gray-500 font-light">
           Total Questions
         </p>
         <p className="text-[20px]">{totalQuestions}</p>
       </div>
 
       <div>
-        <p className="text-[14px] dark:text-gray-300 text-gray-500 font-light">
+        <p className="text-[14px] dark:text-dark-text-muted text-gray-500 font-light">
           Total Accepted
         </p>
         <p className="text-[20px]">{totalAccepted}</p>
       </div>
 
       <div>
-        <p className="text-[14px] dark:text-gray-300 text-gray-500 font-light">
+        <p className="text-[14px] dark:text-dark-text-muted text-gray-500 font-light">
           Total Rejected
         </p>
         <p className="text-[20px]">{totalRejected}</p>
@@ -56,7 +56,7 @@ export default function ReviewerAnalytics({ showReviewed }) {
       <h2>All in Review</h2>
 
       <div>
-        <p className="text-[14px] dark:text-gray-300 text-gray-500 font-light">
+        <p className="text-[14px] dark:text-dark-text-muted text-gray-500 font-light">
           Total in Pending
         </p>
         <p className="text-[20px]">{totalInPending}</p>
