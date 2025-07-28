@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import SelectTopic from "../../../components/sidebar-pages/new_qna_componennts/view_qna_components/SelectTopic";
 import Pagination from "../../../components/pagination/Pagination";
+import { Link } from "react-router-dom";
 
 export default function TopNavigationPanel() {
   const [selectedOption, setSelectedOption] = useState("Select a Topic");
@@ -42,14 +43,21 @@ export default function TopNavigationPanel() {
         setCurrentPage={setCurrentPage}
       />
 
-      <div className="flex items-center gap-[3px]">
-        <button className="bg-red-200 py-[10px] px-[20px] text-red-500 rounded-l-[7px]">
+      <div className="flex items-center gap-[3px] text-[18px] font-medium">
+        <button className="transition-colors cursor-pointer border-[2px] border-red-200 hover:bg-red-200 py-[7px] px-[20px] text-red-600 rounded-l-[7px]">
           Reject
         </button>
-        <button className="bg-green-200 py-[10px] px-[20px] text-green-600 rounded-r-[7px]">
+
+        <button className="transition-colors cursor-pointer border-[2px] border-green-200 hover:bg-green-200 py-[7px] px-[20px] text-green-600 rounded-r-[7px]">
           Approve
         </button>
-        <button className="py-[10px] px-[20px]">Submit Comment</button>
+
+        <Link
+          to="/reviewed_qna"
+          className="transition-colors hover:text-white hover:bg-transparent ml-[15px] rounded-[8px] cursor-pointer bg-[#fff] py-[7px] px-[20px] relative gradient-button"
+        >
+          Submit Comment
+        </Link>
       </div>
     </div>
   );
