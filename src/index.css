@@ -52,12 +52,15 @@
   border-radius: 8px;
   width: calc(100% + 4px);
   height: calc(100% + 4px);
+  pointer-events: none;
+  mix-blend-mode: normal;
 }
 
 /* Custom Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
   background-color: hsl(0, 0%, 95%);
   width: 17px;
+  border-radius: 10px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
@@ -68,4 +71,10 @@
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: hsl(0, 0%, 80%);
+}
+
+.cke {
+  border: 2px solid hsl(0, 0%, 90%) !important;
+  overflow: hidden;
+  border-radius: 10px;
 }

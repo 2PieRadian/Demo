@@ -19,8 +19,8 @@ export default function TopNavigationPanel() {
   function filterByTopicName() {}
 
   return (
-    <div className="py-[10px] px-[25px] flex justify-between items-center">
-      <div className="flex items-center gap-[10px]">
+    <div className="dark:bg-black py-[10px] px-[25px] flex justify-between items-center">
+      <div className="dark:bg-black flex items-center gap-[10px]">
         <SelectTopic
           options={options}
           filterByTopicName={filterByTopicName}

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import QuestionContext from "../QuestionContext";
+import QuestionContext from "../context/QuestionContext";
 import InfoLabel from "../../../components/InfoLabel";
 import StarRating from "../../../components/StarRating";
 
@@ -7,7 +7,7 @@ export default function UserAnswer() {
   const question = useContext(QuestionContext);
 
   return (
-    <div className="flex flex-col p-[30px] gap-[20px] bg-[#fff] rounded-[10px]">
+    <div className="flex flex-col flex-1 p-[30px] gap-[20px] bg-[#fff] rounded-[10px]">
       {/* Heading */}
       <div className="flex items-center justify-between">
         <h1 className="text-[18px]">User's Answer</h1>

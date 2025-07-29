@@ -6,20 +6,30 @@ import Section from "./components/Section";
 import questions from "../../../dummy_data/data";
 
 // Context
-import QuestionContext from "./QuestionContext";
+import QuestionContext from "./context/QuestionContext";
+import CommentTextContext from "./context/CommentTextContext";
+import { useEffect, useMemo, useState } from "react";
 
 export default function DraftPage() {
   const { id } = useParams();
   const question = questions.filter((q) => q.id === Number(id));
+  const [commentText, setCommentText] = useState("");
+
+  const commentTextMemo = useMemo(
+    () => ({ commentText, setCommentText }),
+    [commentText]
+  );
 
   return (
     <div>
       <TopGradientBar />
 
-      <QuestionContext.Provider value={question[0]}>
-        <TopNavigationPanel />
-        <Section />
-      </QuestionContext.Provider>
+      <CommentTextContext.Provider value={commentTextMemo}>
+        <QuestionContext.Provider value={question[0]}>
+          <TopNavigationPanel />
+          <Section />
+        </QuestionContext.Provider>
+      </CommentTextContext.Provider>
     </div>
   );
 }
