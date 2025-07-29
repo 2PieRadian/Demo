@@ -1,6 +1,7 @@
 export default function DarkModeIcon() {
   function handleDarkMode() {
-    document.documentElement.classList.toggle("dark");
+    const darkDiv = document.getElementById("needs-dark-mode");
+    darkDiv.classList.toggle("dark");
   }
 
   return (

@@ -3,8 +3,8 @@ import StarRating from "../../../components/StarRating";
 function RatingWithFactor({ factor }) {
   return (
     <div className="flex items-center gap-[20px]">
-      <StarRating maxRating={5} size={30} defaultRating={0} />
-      <p className="text-[17px] font-light">{factor}</p>
+      <StarRating maxRating={5} size={25} defaultRating={0} />
+      <p className="text-[15px] font-light">{factor}</p>
     </div>
   );
 }
@@ -30,9 +30,9 @@ export default function ProvideRating() {
       </div>
 
       {/* Star Rating Components */}
-      <div className="flex flex-col gap-[10px] mt-[25px]">
-        {factors.map((factor) => (
-          <RatingWithFactor factor={factor} />
+      <div className="flex flex-col gap-[8px] mt-[25px]">
+        {factors.map((factor, i) => (
+          <RatingWithFactor key={i} factor={factor} />
         ))}
       </div>
     </div>

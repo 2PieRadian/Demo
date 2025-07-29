@@ -58,6 +58,7 @@
 .custom-scrollbar::-webkit-scrollbar {
   background-color: hsl(0, 0%, 95%);
   width: 17px;
+  border-radius: 10px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
@@ -68,4 +69,10 @@
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: hsl(0, 0%, 80%);
+}
+
+.cke {
+  border: 2px solid hsl(0, 0%, 90%) !important;
+  overflow: hidden;
+  border-radius: 10px;
 }

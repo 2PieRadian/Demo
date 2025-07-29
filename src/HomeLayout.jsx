@@ -8,7 +8,7 @@ export default function HomeLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   return (
-    <div className="select-none">
+    <div className="select-none" id="needs-dark-mode">
       <NavigationBar />
       <WelcomeBar />
 

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import TopicNameLabel from "../../../components/TopicNameLabel";
-import QuestionContext from "../QuestionContext";
+import QuestionContext from "../context/QuestionContext";
 
 export default function Question() {
   const question = useContext(QuestionContext);
